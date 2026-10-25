@@ -1,0 +1,42 @@
+{
+  "name": "IMS – Institute Management System",
+  "short_name": "IMS Mobile",
+  "description": "Institute Management System for mobile devices. Track attendance, gradebook, timetable, fees, and communication.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1329",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity", "management"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Students",
+      "url": "/?tab=stu",
+      "description": "View and manage student records"
+    },
+    {
+      "name": "Attendance",
+      "url": "/?tab=att",
+      "description": "Mark and inspect attendance"
+    },
+    {
+      "name": "Fees",
+      "url": "/?tab=fee",
+      "description": "Collect fees and view invoices"
+    },
+    {
+      "name": "Marks",
+      "url": "/?tab=mk",
+      "description": "Enter test marks and grade distributions"
+    }
+  ]
+}

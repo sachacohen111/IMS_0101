@@ -1,0 +1,9 @@
+{
+  "appId": "com.ims.institute",
+  "appName": "IMS Mobile",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="imsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="50%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Background Rounded Rect -->
+  <rect width="512" height="512" rx="112" fill="url(#imsGrad)"/>
+  <!-- Decorative border ring -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="4"/>
+  
+  <!-- Graduation Cap Icon -->
+  <g filter="url(#shadow)" transform="translate(80, 110)">
+    <!-- Mortarboard Diamond -->
+    <path d="M176 10 L330 90 L176 170 L22 90 Z" fill="#38bdf8"/>
+    <!-- Cap Underneath Base -->
+    <path d="M80 120 L80 190 C80 235 272 235 272 190 L272 120 L176 170 Z" fill="#0284c7" opacity="0.9"/>
+    <!-- Tassel String and Pendant -->
+    <path d="M176 90 L80 135 L80 220" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="80" cy="228" r="14" fill="#f59e0b"/>
+  </g>
+
+  <!-- Modern IMS Monogram Typography -->
+  <text x="256" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="84" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">IMS</text>
+  <text x="256" y="455" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="600" fill="#2dd4bf" text-anchor="middle" letter-spacing="6">MOBILE APP</text>
+</svg>

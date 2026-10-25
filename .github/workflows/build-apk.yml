@@ -1,0 +1,55 @@
+name: Build Test APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-android-apk:
+    name: Build Android Test APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Setup Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Build Web Application
+        run: npm run build
+
+      - name: Install Capacitor Android tooling
+        run: |
+          npm install -D @capacitor/cli @capacitor/core @capacitor/android
+          npx cap add android || true
+          npx cap sync android
+
+      - name: Build Debug Test APK via Gradle
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload Test APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ims-mobile-test-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14
