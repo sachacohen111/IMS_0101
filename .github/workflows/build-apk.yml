@@ -31,14 +31,14 @@ jobs:
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Web Application
         run: npm run build
 
       - name: Install Capacitor & Generate Android Project
         run: |
-          npm install -D @capacitor/cli @capacitor/core @capacitor/android
+          npm install -D @capacitor/cli @capacitor/core @capacitor/android --legacy-peer-deps
           npx cap add android
           if [ -f android-template/AndroidManifest.xml ]; then
             cp android-template/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
